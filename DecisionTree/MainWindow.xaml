@@ -1,0 +1,35 @@
+﻿<Window 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:v="clr-namespace:DecisionTree.Views"
+    xmlns:vm="clr-namespace:DecisionTree.ViewModels.Details"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" 
+    x:Class="DecisionTree.MainWindow" 
+    Title="Decision Tree" 
+    Height="350" 
+    Width="525">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:OutcomeNodeViewModel}">
+            <v:OutcomeNodeView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RootPathViewModel}">
+            <v:RootPathView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ChancePathViewModel}">
+            <v:ChancePathView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OptionPathViewModel}">
+            <v:OptionPathView />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="232*"/>
+            <ColumnDefinition Width="285*"/>
+        </Grid.ColumnDefinitions>
+        <v:DecisionTreeView Margin="10" />
+        <ContentPresenter Content="{Binding Source={StaticResource Locator}, Path=Detail}" ContentTemplateSelector="{DynamicResource ViewSelector}" Grid.Column="1"/>
+    </Grid>
+</Window>
