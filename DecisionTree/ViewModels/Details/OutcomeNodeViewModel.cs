@@ -13,13 +13,10 @@ namespace DecisionTree.ViewModels.Details
 
         public float ExpectedValue
         {
-            get { return _node.ExpectedValue; }
-            set { _node.SetExpectedValue(value); }
+            get => _node.ExpectedValue;
+            set => _node.SetExpectedValue(value);
         }
 
-        public override Node Node
-        {
-            get { return _node; }
-        }
+        public override Node Node => _node;
     }
 }

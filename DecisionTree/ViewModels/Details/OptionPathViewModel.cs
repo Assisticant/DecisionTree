@@ -13,13 +13,10 @@ namespace DecisionTree.ViewModels.Details
 
         public float Cost
         {
-            get { return _option.Cost; }
-            set { _option.Cost = value; }
+            get => _option.Cost;
+            set => _option.Cost = value;
         }
 
-        public override Path Path
-        {
-            get { return _option; }
-        }
+        public override Path Path => _option;
     }
 }

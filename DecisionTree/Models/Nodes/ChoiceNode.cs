@@ -14,9 +14,7 @@ namespace DecisionTree.Models.Nodes
         public ChoiceNode()
         {
             _expectedValue = new Computed<float>(() =>
-            {
-                return _options.Max(o => o.Child.ExpectedValue - o.Cost);
-            });
+                _options.Max(o => o.Child.ExpectedValue - o.Cost));
         }
 
         public ChoiceNode AddOption(float cost, Node child)
@@ -25,14 +23,8 @@ namespace DecisionTree.Models.Nodes
             return this;
         }
 
-        public override float ExpectedValue
-        {
-            get { return _expectedValue.Value; }
-        }
+        public override float ExpectedValue => _expectedValue.Value;
 
-        public override IEnumerable<Path> Paths
-        {
-            get { return _options; }
-        }
+        public override IEnumerable<Path> Paths => _options;
     }
 }

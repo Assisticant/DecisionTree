@@ -11,9 +11,6 @@ namespace DecisionTree.ViewModels.Details
             _root = root;            
         }
 
-        public override Path Path
-        {
-            get { return _root; }
-        }
+        public override Path Path => _root;
     }
 }

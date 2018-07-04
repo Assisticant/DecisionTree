@@ -9,8 +9,8 @@ namespace DecisionTree.Models
 
         public Path SelectedPath
         {
-            get { return _selectedPath; }
-            set { _selectedPath.Value = value; }
+            get => _selectedPath;
+            set => _selectedPath.Value = value;
         }
     }
 }

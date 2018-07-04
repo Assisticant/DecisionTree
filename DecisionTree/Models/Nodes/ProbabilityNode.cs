@@ -31,14 +31,8 @@ namespace DecisionTree.Models.Nodes
             return this;
         }
 
-        public override float ExpectedValue
-        {
-            get { return _expectedValue.Value; }
-        }
+        public override float ExpectedValue => _expectedValue.Value;
 
-        public override IEnumerable<Path> Paths
-        {
-            get { return _chances; }
-        }
+        public override IEnumerable<Path> Paths => _chances;
     }
 }

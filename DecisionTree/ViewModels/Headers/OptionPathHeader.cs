@@ -1,6 +1,5 @@
 using DecisionTree.Models;
 using DecisionTree.Models.Paths;
-using System;
 
 namespace DecisionTree.ViewModels.Headers
 {
@@ -14,14 +13,8 @@ namespace DecisionTree.ViewModels.Headers
             _option = option;            
         }
 
-        public override Path Path
-        {
-            get { return _option; }
-        }
+        public override Path Path => _option;
 
-        public string Cost
-        {
-            get { return String.Format("{0:#,0}", _option.Cost); }
-        }
+        public string Cost => $"{_option.Cost:#,0}";
     }
 }

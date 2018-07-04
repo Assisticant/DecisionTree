@@ -10,8 +10,8 @@ namespace DecisionTree.Models.Nodes
 
         public string Label
         {
-            get { return _label; }
-            set { _label.Value = value; }
+            get => _label;
+            set => _label.Value = value;
         }
 
 

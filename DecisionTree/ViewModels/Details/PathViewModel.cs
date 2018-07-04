@@ -7,10 +7,7 @@ namespace DecisionTree.ViewModels.Details
     {
         public abstract Path Path { get; }
 
-        public NodeViewModel Node
-        {
-            get { return NodeViewModel.ForNode(Path.Child); }
-        }
+        public NodeViewModel Node => NodeViewModel.ForNode(Path.Child);
 
         public override bool Equals(object obj)
         {

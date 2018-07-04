@@ -8,8 +8,8 @@ namespace DecisionTree.Models.Paths
 
         public float Cost
         {
-            get { return _cost; }
-            set { _cost.Value = value; }
+            get => _cost;
+            set => _cost.Value = value;
         }
     }
 }

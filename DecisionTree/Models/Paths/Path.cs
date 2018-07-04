@@ -9,8 +9,8 @@ namespace DecisionTree.Models.Paths
 
         public Node Child
         {
-            get { return _child; }
-            set { _child.Value = value; }
+            get => _child;
+            set => _child.Value = value;
         }
     }
 }

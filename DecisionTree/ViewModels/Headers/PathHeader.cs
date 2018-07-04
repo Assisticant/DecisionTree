@@ -18,19 +18,13 @@ namespace DecisionTree.ViewModels.Headers
 
         public abstract Path Path { get; }
 
-        public string Label
-        {
-            get { return Path.Child.Label; }
-        }
+        public string Label => Path.Child.Label;
 
-        public string ExpectedValue
-        {
-            get { return String.Format("{0:#,0.}", Path.Child.ExpectedValue); }
-        }
+        public string ExpectedValue => $"{Path.Child.ExpectedValue:#,0.}";
 
         public bool Selected
         {
-            get { return Object.Equals(_selection.SelectedPath, Path); }
+            get => Object.Equals(_selection.SelectedPath, Path);
             set
             {
                 if (value)
@@ -40,20 +34,11 @@ namespace DecisionTree.ViewModels.Headers
             }
         }
 
-        public Node Node
-        {
-            get { return Path.Child; }
-        }
+        public Node Node => Path.Child;
 
-        public IEnumerable<PathHeader> Children
-        {
-            get
-            {
-                return
-                    from child in Path.Child.Paths
-                    select PathHeader.ForPath(child, _selection);
-            }
-        }
+        public IEnumerable<PathHeader> Children =>
+            from child in Path.Child.Paths
+            select PathHeader.ForPath(child, _selection);
 
         public override bool Equals(object obj)
         {

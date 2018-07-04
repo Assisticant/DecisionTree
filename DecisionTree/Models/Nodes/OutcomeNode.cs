@@ -1,6 +1,7 @@
 ﻿using Assisticant.Fields;
 using DecisionTree.Models.Paths;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DecisionTree.Models.Nodes
 {
@@ -8,10 +9,7 @@ namespace DecisionTree.Models.Nodes
     {
         private Observable<float> _expectedValue = new Observable<float>(default(float));
 
-        public override float ExpectedValue
-        {
-            get { return _expectedValue; }
-        }
+        public override float ExpectedValue => _expectedValue;
 
         public OutcomeNode SetExpectedValue(float value)
         {
@@ -19,9 +17,6 @@ namespace DecisionTree.Models.Nodes
             return this;
         }
 
-        public override IEnumerable<Path> Paths
-        {
-            get { yield break; }
-        }
+        public override IEnumerable<Path> Paths => Enumerable.Empty<Path>();
     }
 }

@@ -1,6 +1,5 @@
 using DecisionTree.Models;
 using DecisionTree.Models.Paths;
-using System;
 
 namespace DecisionTree.ViewModels.Headers
 {
@@ -14,14 +13,8 @@ namespace DecisionTree.ViewModels.Headers
             _chance = chance;
         }
 
-        public override Path Path
-        {
-            get { return _chance; }
-        }
+        public override Path Path => _chance;
 
-        public string Weight
-        {
-            get { return String.Format("{0}%", _chance.Weight * 100.0f); }
-        }
+        public string Weight => $"{_chance.Weight * 100.0f}%";
     }
 }

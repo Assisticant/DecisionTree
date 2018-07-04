@@ -9,8 +9,8 @@ namespace DecisionTree.Models.Paths
 
         public float Weight
         {
-            get { return _weight; }
-            set { _weight.Value = value; }
+            get => _weight;
+            set => _weight.Value = value;
         }
     }
 }

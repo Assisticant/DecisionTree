@@ -20,22 +20,13 @@ namespace DecisionTree.ViewModels
 			_selection = new Selection();
         }
 
-        public object Main
-        {
-            get { return ViewModel(() => new MainViewModel(_root, _selection)); }
-        }
+        public object Main => ViewModel(() => new MainViewModel(_root, _selection));
 
-		public object Detail
-		{
-			get
-			{
-				return ViewModel(() => _selection.SelectedPath == null
-					? null
-					: PathViewModel.ForPath(_selection.SelectedPath));
-			}
-		}
+        public object Detail => ViewModel(() => _selection.SelectedPath == null
+			? null
+			: PathViewModel.ForPath(_selection.SelectedPath));
 
-		private Root LoadDocument()
+        private Root LoadDocument()
 		{
 			// TODO: Load your document here.
             return LoadDesignModeDocument();

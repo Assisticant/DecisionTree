@@ -13,13 +13,10 @@ namespace DecisionTree.ViewModels.Details
 
         public float Weight
         {
-            get { return _chance.Weight; }
-            set { _chance.Weight = value; }
+            get => _chance.Weight;
+            set => _chance.Weight = value;
         }
 
-        public override Path Path
-        {
-            get { return _chance; }
-        }
+        public override Path Path => _chance;
     }
 }
